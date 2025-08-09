@@ -49,7 +49,7 @@
             overflow-x: hidden;
         }
         
-        /* Background container dengan image dari GitHub - INI YANG DIUPDATE */
+        /* Background container dengan GitHub image */
         .background-container {
             position: fixed;
             top: 0;
@@ -57,7 +57,6 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            /* Kombinasi gradient overlay dan background image untuk optimal visual balance */
             background: 
                 linear-gradient(135deg, rgba(10, 10, 15, 0.85) 0%, rgba(13, 17, 23, 0.9) 50%, rgba(10, 10, 15, 0.85) 100%),
                 url('https://raw.githubusercontent.com/nothing010101/basebotai/main/Bg.png');
@@ -67,7 +66,6 @@
             background-repeat: no-repeat;
         }
         
-        /* Overlay tambahan untuk Base chain color integration */
         .background-container::before {
             content: '';
             position: absolute;
@@ -85,7 +83,6 @@
             z-index: 1;
         }
         
-        /* Grid pattern yang disesuaikan dengan background image */
         .background-grid {
             position: absolute;
             top: 0;
@@ -112,7 +109,7 @@
             padding: 0 var(--spacing-md);
         }
         
-        /* Enhanced navbar dengan better contrast untuk background image */
+        /* Enhanced navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -164,6 +161,7 @@
             text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
         }
         
+        /* Hero section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -189,7 +187,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            /* Enhanced text shadow untuk better readability dengan background image */
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
         }
         
@@ -207,6 +204,7 @@
             text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
         
+        /* Buttons dengan notification sistem */
         .btn {
             padding: var(--spacing-md) var(--spacing-xl);
             border: none;
@@ -220,6 +218,7 @@
             cursor: pointer;
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
         
         .btn-primary {
@@ -252,7 +251,317 @@
             margin-top: var(--spacing-lg);
         }
         
-        /* Enhanced marketing banner dengan better integration terhadap background */
+        /* Notification popup system - Sistem ini memungkinkan feedback langsung kepada user */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--warning-orange), #FF6B35);
+            color: white;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification::before {
+            content: '⚠️';
+            margin-right: var(--spacing-xs);
+            font-size: 1.2rem;
+        }
+        
+        /* Features section - Komprehensif showcase dari capabilities */
+        .features {
+            padding: var(--spacing-2xl) 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 82, 255, 0.05), transparent);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .section-header h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        /* Feature cards dengan enhanced visual hierarchy */
+        .feature-card {
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+        
+        /* Gradient border effect untuk visual appeal */
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--base-blue), var(--ai-cyan), var(--ai-purple));
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 82, 255, 0.2);
+            border-color: var(--base-blue);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--base-blue), var(--ai-cyan));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 8px 25px rgba(0, 82, 255, 0.3);
+        }
+        
+        .feature-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Feature highlights untuk key benefits */
+        .feature-highlights {
+            margin-top: var(--spacing-md);
+        }
+        
+        .feature-highlight {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .feature-highlight::before {
+            content: '✓';
+            margin-right: var(--spacing-xs);
+            color: var(--success-green);
+            font-weight: bold;
+        }
+        
+        /* Tokenomics section dengan visual data representation */
+        .tokenomics {
+            padding: var(--spacing-2xl) 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(0, 82, 255, 0.05));
+            backdrop-filter: blur(5px);
+        }
+        
+        .tokenomics-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+        }
+        
+        .tokenomics-info h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        
+        .tokenomics-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Token details card dengan enhanced styling */
+        .token-details {
+            background: rgba(18, 18, 26, 0.9);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .token-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--dark-border);
+            transition: all 0.3s ease;
+        }
+        
+        .token-detail:hover {
+            background: rgba(0, 82, 255, 0.05);
+            margin: 0 calc(-1 * var(--spacing-md));
+            padding-left: var(--spacing-md);
+            padding-right: var(--spacing-md);
+            border-radius: var(--radius-sm);
+        }
+        
+        .token-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .token-detail .label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        
+        .token-detail .value {
+            color: var(--text-accent);
+            font-weight: 600;
+            font-family: 'Orbitron', monospace;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Fee distribution visualization */
+        .fee-distribution {
+            background: rgba(18, 18, 26, 0.9);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            backdrop-filter: blur(15px);
+        }
+        
+        .fee-distribution h4 {
+            font-family: 'Orbitron', monospace;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .fee-total {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--base-blue);
+            font-family: 'Orbitron', monospace;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 0 20px rgba(0, 82, 255, 0.4);
+        }
+        
+        .fee-breakdown {
+            display: grid;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .fee-item {
+            background: rgba(0, 82, 255, 0.1);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 82, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .fee-item:hover {
+            background: rgba(0, 82, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .fee-percentage {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .fee-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: var(--spacing-xs);
+        }
+        
+        /* Responsive design improvements */
+        @media (max-width: 768px) {
+            .background-container {
+                background-attachment: scroll;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content,
+            .tokenomics-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .notification {
+                right: 10px;
+                left: 10px;
+                transform: translateY(-100%);
+            }
+            
+            .notification.show {
+                transform: translateY(0);
+            }
+        }
+        
+        /* Marketing banner styles tetap sama seperti sebelumnya */
         .marketing-banner {
             padding: var(--spacing-2xl) 0;
             background: linear-gradient(135deg, rgba(0, 82, 255, 0.1), rgba(0, 212, 255, 0.05));
@@ -342,6 +651,7 @@
             opacity: 1;
         }
         
+        /* Social dan footer styles tetap sama */
         .social-links {
             display: flex;
             gap: var(--spacing-md);
@@ -378,7 +688,6 @@
             background: rgba(255, 255, 255, 0.1);
         }
         
-        /* Enhanced footer dengan better contrast */
         .footer {
             background: rgba(18, 18, 26, 0.9);
             border-top: 1px solid var(--dark-border);
@@ -422,32 +731,14 @@
             color: var(--text-secondary);
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
-        /* Responsive adjustments untuk mobile dengan background image */
-        @media (max-width: 768px) {
-            .background-container {
-                background-attachment: scroll; /* Better performance pada mobile */
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content,
-            .marketing-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Background container dengan GitHub image dan enhanced layering -->
+    <!-- Notification popup yang akan muncul ketika user click launch buttons -->
+    <div id="notification" class="notification">
+        NOT YET LIVE - Coming Soon!
+    </div>
+    
     <div class="background-container">
         <div class="background-grid"></div>
     </div>
@@ -458,7 +749,7 @@
                 <div class="logo">BasedBotAi</div>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#banner">Banner</a></li>
+                    <li><a href="#banner">Demo</a></li>
                     <li><a href="#tokenomics">Tokenomics</a></li>
                     <li><a href="#launch">Launch</a></li>
                 </ul>
@@ -477,8 +768,8 @@
                         <span class="highlight">$BotAi cashback rewards</span> on every transaction.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#launch" class="btn btn-primary">Join Launch Campaign</a>
-                        <a href="#banner" class="btn btn-secondary">See Our Bot</a>
+                        <button class="btn btn-primary" onclick="showNotification()">Join Launch Campaign</button>
+                        <button class="btn btn-secondary" onclick="showNotification()">Try Our Bot</button>
                     </div>
                 </div>
                 
@@ -490,25 +781,113 @@
         </div>
     </section>
     
+    <!-- Features Section - Comprehensive showcase of capabilities -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powered by Advanced AI Technology</h2>
+                <p>Discover the cutting-edge features that make BasedBotAi the most sophisticated trading bot on Base chain, designed to maximize your profits while minimizing risks.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- AI-Powered Trading Feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Smart Trading</h3>
+                    <p>Our advanced machine learning algorithms continuously analyze market patterns, sentiment data, and technical indicators to execute optimal trades with precision timing across Uniswap V2, V3, and V4 protocols.</p>
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">Real-time market analysis</div>
+                        <div class="feature-highlight">Intelligent route optimization</div>
+                        <div class="feature-highlight">Predictive price modeling</div>
+                        <div class="feature-highlight">Auto-slippage adjustment</div>
+                    </div>
+                </div>
+                
+                <!-- Cashback Rewards Feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Progressive Cashback System</h3>
+                    <p>Earn $BotAi tokens as cashback on every trade through our innovative tier system. The more you trade, the higher your rewards, with up to 50% cashback during our exclusive 6-month launch campaign.</p>
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">Up to 50% cashback rewards</div>
+                        <div class="feature-highlight">Progressive tier system</div>
+                        <div class="feature-highlight">Instant reward tracking</div>
+                        <div class="feature-highlight">Flexible claim options</div>
+                    </div>
+                </div>
+                
+                <!-- Base Chain Speed Feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning-Fast Base Chain</h3>
+                    <p>Built exclusively on Base blockchain for optimal performance with lightning-fast transaction speeds and minimal gas fees, making DeFi trading accessible and cost-effective for everyone.</p>
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">Sub-second transaction speeds</div>
+                        <div class="feature-highlight">Ultra-low gas fees</div>
+                        <div class="feature-highlight">High network reliability</div>
+                        <div class="feature-highlight">Seamless Coinbase integration</div>
+                    </div>
+                </div>
+                
+                <!-- Security Feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Enterprise-Grade Security</h3>
+                    <p>Your funds are protected by military-grade encryption, comprehensive smart contract audits, and non-custodial architecture. You maintain full control of your assets at all times with advanced security protocols.</p>
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">Non-custodial design</div>
+                        <div class="feature-highlight">Multi-signature protection</div>
+                        <div class="feature-highlight">Smart contract audits</div>
+                        <div class="feature-highlight">MEV protection built-in</div>
+                    </div>
+                </div>
+                
+                <!-- Telegram Integration Feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Seamless Telegram Trading</h3>
+                    <p>Execute trades, monitor portfolios, and manage your investments directly from Telegram with our intuitive bot interface. No need to switch between apps or platforms for complete trading control.</p>
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">One-click trading commands</div>
+                        <div class="feature-highlight">Real-time notifications</div>
+                        <div class="feature-highlight">Portfolio management</div>
+                        <div class="feature-highlight">24/7 bot availability</div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Advanced Analytics Dashboard</h3>
+                    <p>Make informed decisions with comprehensive trading analytics, real-time performance metrics, detailed profit/loss tracking, and market insights powered by our AI analysis engine.</p>
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">Real-time P&L tracking</div>
+                        <div class="feature-highlight">Performance analytics</div>
+                        <div class="feature-highlight">Market trend analysis</div>
+                        <div class="feature-highlight">Custom alerts system</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Marketing Banner Section dengan GitHub Image -->
     <section id="banner" class="marketing-banner">
         <div class="container">
             <div class="marketing-content">
                 <div class="marketing-text">
-                    <h2>Meet BasedBotAi</h2>
+                    <h2>Meet BasedBotAi in Action</h2>
                     <p>
-                        Discover the next generation of AI-powered trading technology. Our sophisticated bot 
-                        combines advanced algorithms with Base chain efficiency to deliver unprecedented 
-                        trading performance and maximum cashback rewards for our community.
+                        Experience the next generation of AI-powered trading technology. Our sophisticated bot combines advanced algorithms with Base chain efficiency to deliver unprecedented trading performance and maximum cashback rewards for our community.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#launch" class="btn btn-primary">Start Trading Now</a>
-                        <a href="https://t.me/basedbotai" class="btn btn-secondary">Join Community</a>
+                        <button class="btn btn-primary" onclick="showNotification()">Start Trading Now</button>
+                        <button class="btn btn-secondary" onclick="showNotification()">Join Community</button>
                     </div>
                 </div>
                 
                 <div class="marketing-image">
                     <img src="https://raw.githubusercontent.com/nothing010101/basebotai/main/IMG_20250809_111546.png" 
-                         alt="BasedBotAi Trading Interface" 
+                         alt="BasedBotAi Trading Interface Demo" 
                          loading="lazy">
                     <div class="marketing-overlay">
                         BasedBotAi Live Demo
@@ -518,6 +897,147 @@
         </div>
     </section>
     
+    <!-- Comprehensive Tokenomics Section -->
+    <section id="tokenomics" class="tokenomics">
+        <div class="container">
+            <div class="section-header">
+                <h2>$BotAi Tokenomics</h2>
+                <p>Our tokenomics are carefully designed for sustainable growth, long-term value creation, and community rewards. The innovative cashback mechanism creates continuous buying pressure while rewarding active traders.</p>
+            </div>
+            
+            <div class="tokenomics-content">
+                <div class="tokenomics-info">
+                    <h3>Sustainable Economic Model</h3>
+                    <div class="tokenomics-description">
+                        BasedBotAi introduces a revolutionary tokenomics model where every trade generates value for both the ecosystem and individual users. Our fee structure creates a flywheel effect that benefits all stakeholders while ensuring long-term project sustainability.
+                    </div>
+                    
+                    <div class="token-details">
+                        <div class="token-detail">
+                            <span class="label">Token Name</span>
+                            <span class="value">BasedBotAi</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Ticker Symbol</span>
+                            <span class="value">$BotAi</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Total Supply</span>
+                            <span class="value">1,000,000,000</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Blockchain Network</span>
+                            <span class="value">Base Chain</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Launch Platform</span>
+                            <span class="value">Ape.store</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Campaign Duration</span>
+                            <span class="value">6 Months</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Contract Type</span>
+                            <span class="value">ERC-20 Standard</span>
+                        </div>
+                        <div class="token-detail">
+                            <span class="label">Audit Status</span>
+                            <span class="value">Fully Audited</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tokenomics-visual">
+                    <div class="fee-distribution">
+                        <h4>Smart Fee Distribution Model</h4>
+                        <div class="fee-total">2%</div>
+                        <div style="color: var(--text-secondary); margin-bottom: var(--spacing-lg);">Total Trading Fee Per Transaction</div>
+                        
+                        <div class="fee-breakdown">
+                            <div class="fee-item">
+                                <div class="fee-percentage">0.2%</div>
+                                <div class="fee-description">Cashback Reward Pool</div>
+                            </div>
+                            <div class="fee-item" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2);">
+                                <div class="fee-percentage" style="color: var(--ai-purple);">1.8%</div>
+                                <div class="fee-description">Development & Operations</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--dark-border);">
+                            <h5 style="color: var(--text-primary); margin-bottom: var(--spacing-sm);">Cashback Distribution by Tier</h5>
+                            <div style="display: grid; gap: var(--spacing-xs); font-size: 0.9rem;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-secondary);">Tier 1 (Bronze):</span>
+                                    <span style="color: var(--success-green);">30% of 0.2%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-secondary);">Tier 2 (Silver):</span>
+                                    <span style="color: var(--success-green);">40% of 0.2%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-secondary);">Tier 3 (Gold):</span>
+                                    <span style="color: var(--success-green);">50% of 0.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Launch Information Section -->
+    <section id="launch" style="padding: var(--spacing-2xl) 0; background: linear-gradient(135deg, rgba(0, 82, 255, 0.1), rgba(139, 92, 246, 0.1)); backdrop-filter: blur(10px);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join the Revolution</h2>
+                <p>Be among the first to experience the future of AI-powered DeFi trading. Our exclusive 6-month launch campaign offers unprecedented cashback rewards and early adopter benefits.</p>
+            </div>
+            
+            <div style="text-align: center; background: rgba(18, 18, 26, 0.9); border: 1px solid var(--dark-border); border-radius: var(--radius-xl); padding: var(--spacing-2xl); max-width: 700px; margin: 0 auto; backdrop-filter: blur(15px);">
+                <div style="font-family: 'Orbitron', monospace; font-size: 2.8rem; font-weight: 900; color: var(--text-accent); margin-bottom: var(--spacing-md); text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);">
+                    Coming Soon
+                </div>
+                <div style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); line-height: 1.6; font-size: 1.1rem;">
+                    BasedBotAi will launch on <strong style="color: var(--text-primary);">Ape.store</strong> 
+                    with an exclusive 6-month cashback campaign. Early adopters will enjoy maximum rewards 
+                    and help shape the future of AI trading technology.
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+                    <div style="text-align: center; padding: var(--spacing-md); background: rgba(0, 82, 255, 0.1); border-radius: var(--radius-md); border: 1px solid rgba(0, 82, 255, 0.2);">
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--base-blue); font-family: 'Orbitron', monospace;">6 Months</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Campaign Duration</div>
+                    </div>
+                    <div style="text-align: center; padding: var(--spacing-md); background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-md); border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--success-green); font-family: 'Orbitron', monospace;">Up to 50%</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Cashback Rewards</div>
+                    </div>
+                    <div style="text-align: center; padding: var(--spacing-md); background: rgba(139, 92, 246, 0.1); border-radius: var(--radius-md); border: 1px solid rgba(139, 92, 246, 0.2);">
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--ai-purple); font-family: 'Orbitron', monospace;">1B</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Total Supply</div>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons" style="justify-content: center; margin-bottom: var(--spacing-md);">
+                    <button class="btn btn-primary" onclick="showNotification()" style="font-size: 1.1rem; padding: var(--spacing-md) var(--spacing-xl);">
+                        Get Notified on Launch
+                    </button>
+                    <a href="https://ape.store" class="btn btn-secondary" style="font-size: 1.1rem; padding: var(--spacing-md) var(--spacing-xl);">
+                        Visit Ape.store
+                    </a>
+                </div>
+                
+                <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: var(--spacing-md);">
+                    ⚠️ Launch date will be announced on our social channels. Follow us for updates!
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer dengan Social Media Links -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -550,23 +1070,27 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="#banner">Bot Demo</a>
-                    <a href="#tokenomics">Tokenomics</a>
-                    <a href="#launch">Launch Campaign</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <a href="https://t.me/basedbotai">Telegram</a>
-                    <a href="https://twitter.com/basedbotai">Twitter/X</a>
-                    <a href="https://discord.gg/basedbotai">Discord</a>
+                    <h4>Product Features</h4>
+                    <a href="#features">AI Trading Technology</a>
+                    <a href="#features">Cashback Rewards</a>
+                    <a href="#features">Base Chain Integration</a>
+                    <a href="#features">Security Features</a>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Developer</h4>
-                    <a href="https://github.com/basedbotai">GitHub Repository</a>
+                    <h4>Community Hub</h4>
+                    <a href="https://t.me/basedbotai">Telegram Community</a>
+                    <a href="https://twitter.com/basedbotai">Twitter Updates</a>
+                    <a href="https://discord.gg/basedbotai">Discord Server</a>
+                    <a href="#launch">Launch Campaign</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Developer Resources</h4>
+                    <a href="https://github.com/basedbotai">Open Source Code</a>
                     <a href="https://github.com/basedbotai/smart-contracts">Smart Contracts</a>
                     <a href="https://github.com/basedbotai/audit-reports">Security Audits</a>
+                    <a href="https://docs.basedbotai.com">API Documentation</a>
                 </div>
             </div>
             
@@ -578,5 +1102,92 @@
             </div>
         </div>
     </footer>
+    
+    <!-- JavaScript untuk Notification System dan Enhanced Interactivity -->
+    <script>
+        // Notification system yang memberikan feedback immediate kepada users
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            // Auto-hide notification setelah 3 detik untuk user experience yang clean
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Smooth scrolling untuk navigation yang enhanced user experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Dynamic navbar transparency berdasarkan scroll position
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+                navbar.style.boxShadow = '0 2px 25px rgba(0, 0, 0, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 15, 0.9)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+        
+        // Enhanced animations untuk feature cards ketika mereka enter viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Apply animation observer kepada semua feature cards dan important sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.feature-card, .token-details, .fee-distribution');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+        
+        // Interactive hover effects untuk enhanced engagement
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'var(--base-blue)';
+                this.style.backgroundColor = 'rgba(18, 18, 26, 0.95)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'var(--dark-border)';
+                this.style.backgroundColor = 'rgba(18, 18, 26, 0.8)';
+            });
+        });
+        
+        // Error handling untuk images yang mungkin gagal load
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+                console.log('Image failed to load:', this.src);
+            });
+        });
+    </script>
 </body>
 </html>
